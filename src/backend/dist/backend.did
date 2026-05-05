@@ -1,0 +1,71 @@
+type Timestamp = int;
+type SystemStatePublic = 
+ record {
+   armed: bool;
+   armedBy: text;
+   connectionStatus: text;
+   lastArmedTime: opt Timestamp;
+   mode: text;
+   signalStrength: nat;
+   triggeredSensorId: opt text;
+ };
+type Sensor = 
+ record {
+   batteryPercent: opt nat;
+   bypassed: bool;
+   id: text;
+   lastTriggered: opt Timestamp;
+   name: text;
+   signalPercent: opt nat;
+   status: text;
+   "type": text;
+   zone: text;
+ };
+type LogEntry = 
+ record {
+   armedBy: opt text;
+   description: text;
+   eventType: text;
+   id: text;
+   sensorId: opt text;
+   timestamp: Timestamp;
+ };
+type Contact = 
+ record {
+   id: text;
+   name: text;
+   phone: text;
+   receiveCall: bool;
+   receiveSms: bool;
+   role: text;
+ };
+type AppSettingsPublic = 
+ record {
+   deviceIp: text;
+   entryDelay: nat;
+   exitDelay: nat;
+   firmwareVersion: text;
+   notificationsEnabled: bool;
+   pin: text;
+   simStatus: text;
+   sirenDuration: text;
+ };
+service : {
+  addContact: (contact: Contact) -> (text);
+  addLog: (entry: LogEntry) -> (text);
+  addSensor: (sensor: Sensor) -> (text);
+  armSystem: (mode: text, pin: text) -> (bool);
+  changePin: (oldPin: text, newPin: text) -> (bool);
+  deleteContact: (id: text) -> (bool);
+  deleteSensor: (id: text) -> (bool);
+  disarmSystem: (pin: text) -> (bool);
+  getContacts: () -> (vec Contact) query;
+  getLogs: () -> (vec LogEntry) query;
+  getSensors: () -> (vec Sensor) query;
+  getSettings: () -> (AppSettingsPublic) query;
+  getStatus: () -> (SystemStatePublic) query;
+  seedDemoData: () -> (bool);
+  updateContact: (id: text, contact: Contact) -> (bool);
+  updateSensorBypass: (id: text, bypassed: bool) -> (bool);
+  updateSettings: (settings: AppSettingsPublic) -> (bool);
+}

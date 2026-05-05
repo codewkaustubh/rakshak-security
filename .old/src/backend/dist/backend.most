@@ -1,0 +1,75 @@
+// Version: 1.0.0
+type Contact__913099184 =
+  {
+    id : Text;
+    name : Text;
+    phone : Text;
+    receiveCall : Bool;
+    receiveSms : Bool;
+    role : Text
+  };
+type LogEntry__570646370 =
+  {
+    armedBy : ?Text;
+    description : Text;
+    eventType : Text;
+    id : Text;
+    sensorId : ?Text;
+    timestamp : Timestamp__301639476
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Sensor__736060814 =
+  {
+    batteryPercent : ?Nat;
+    bypassed : Bool;
+    id : Text;
+    lastTriggered : ?Timestamp__301639476;
+    name : Text;
+    signalPercent : ?Nat;
+    status : Text;
+    type_ : Text;
+    zone : Text
+  };
+type Timestamp__301639476 = Int;
+actor {
+  stable appSettings :
+    {
+      var deviceIp : Text;
+      var entryDelay : Nat;
+      var exitDelay : Nat;
+      firmwareVersion : Text;
+      var notificationsEnabled : Bool;
+      var pin : Text;
+      var simStatus : Text;
+      var sirenDuration : Text
+    };
+  stable contacts :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Contact__913099184]];
+      var elementIndex : Nat__490723111
+    };
+  stable logs :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?LogEntry__570646370]];
+      var elementIndex : Nat__490723111
+    };
+  stable sensors :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Sensor__736060814]];
+      var elementIndex : Nat__490723111
+    };
+  stable systemState :
+    {
+      var armed : Bool;
+      var armedBy : Text;
+      var connectionStatus : Text;
+      var lastArmedTime : ?Timestamp__301639476;
+      var mode : Text;
+      var signalStrength : Nat;
+      var triggeredSensorId : ?Text
+    }
+};

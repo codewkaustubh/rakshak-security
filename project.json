@@ -1,0 +1,26 @@
+{
+  "overview": "Rakshak Web is a production-grade cloud security dashboard for remotely controlling an ESP32-based security system from anywhere in the world. Features dual-zone arm/disarm controls, real-time device status, alarm overlays, and full event logging — all in a premium dark military-grade interface.",
+  "features": [
+    "Dual-zone arm/disarm controls with shield icons and pulsing glow animations",
+    "Real-time device status polling with online/offline detection",
+    "Full-screen alarm overlay for intrusion and SOS events with audio alert",
+    "Complete event log with filter tabs (Alarms, Arm Events, Power, System)",
+    "Device pairing flow with unique Device ID (RKSH-XXXX format)",
+    "Multi-device management and device switching from dashboard header",
+    "Settings: account, notifications per-event toggles, user sharing, zone labels",
+    "Internet Identity authentication with persistent session",
+    "PWA-ready with installable manifest and service worker",
+    "Responsive mobile-first layout optimized for 375px to 1440px"
+  ],
+  "category": "productivity",
+  "tags": [
+    "security",
+    "iot",
+    "esp32",
+    "dashboard",
+    "pwa",
+    "dark-mode",
+    "real-time"
+  ],
+  "last_updated": "2026-05-05T11:47:06.396Z"
+}
