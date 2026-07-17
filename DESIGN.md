@@ -11,7 +11,7 @@ Military-grade industrial aesthetic with glowing status indicators and pulsing a
 | Primary | 0.64 0.22 262 | #00A3FF | Electric blue, primary actions |
 | Destructive | 0.53 0.23 15 | #FF3B3B | Armed red, alert state |
 | Success | 0.73 0.23 142 | #00E676 | Safe green, active/armed zone |
-| Amber | 0.68 0.21 50 | #FFA500 | Warning state, secondary alerts |
+| Amber | 0.69 0.22 51 | #FFA500 | Warning state, secondary alerts |
 | Foreground | 0.93 0.02 0 | #F0EFE6 | Text, near-white |
 | Muted | 0.35 0.02 0 | #565555 | Secondary labels, disabled |
 | Border | 0.17 0.02 262 | #1E2A45 | Grid lines, borders, subtle dividers |
